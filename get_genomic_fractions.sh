@@ -1,7 +1,8 @@
 #!/bin/bash
 
-###Script to generate fractions in C.remanei
-###
+################################################
+## Script to generate fractions in C.remanei ###
+################################################
 
 ref="/path-to/ref/CR.ncbi.fasta"
 refmask="/path-to/ref/CR.ncbi.hardmasked.fasta"
