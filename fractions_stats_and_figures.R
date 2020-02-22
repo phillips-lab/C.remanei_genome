@@ -2,7 +2,6 @@
 ###### Generates Figure 2, Figure S5, a Part of Table S4 #######
 ################################################################
 
-
 setwd("~/Documents/Phillips_lab/drafts/CR_genome/Fractions")
 
 library(lsr)
@@ -64,13 +63,11 @@ colnames(CRGco)<-c("CHR","START","END","Value")
 CRGco$Type<-"Gene_count"
 CRGco$Species<-"C.remanei"
 
-
 CEGco<-read.csv("CE_gene.bed",header=F,sep ="\t")
 CEGco<-CEGco[,c("V1","V2","V3","V4")]
 colnames(CEGco)<-c("CHR","START","END","Value")
 CEGco$Type<-"Gene_count"
 CEGco$Species<-"C.elegans"
-
 
 CRGC<-read.csv("CR_GC_content.bed",header=F,sep ="\t",skip=1)
 CRGC<-CRGC[,c("V1","V2","V3","V5")]
@@ -91,9 +88,7 @@ CEGC$Type<-"GC-content"
 CEGC$Species<-"C.elegans"
 
 
-
 ######combine data
-
 
 EIN<-rbind(CEE,CEI)
 EIN<-rbind(EIN,CEN)
@@ -104,7 +99,6 @@ EIN$CHR<-gsub("_pilon","",EIN$CHR)
 EIN$CHR<-gsub("chr","",EIN$CHR)
 EIN$CHR<-gsub("MtDNA","M",EIN$CHR)
 EIN$POS<-(EIN$START+EIN$END)/2
-
 
 
 GGC<-rbind(CEG,CEGC)
