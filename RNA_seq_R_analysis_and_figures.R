@@ -3,7 +3,7 @@
 ############### RNA-seq data, RPKM calculation########################
 ######################################################################
 
-#' Estimates RPKM values and produces a plot for RNA_seq data (Supplementary Figure S5)
+#' Estimates RPKM values and produces a plot for RNA_seq data (Supplementary Figure S6)
 setwd("~/Documents/Phillips_lab/drafts/CR_genome/RNA_L1")
 library(lsr)
 library(dplyr)
@@ -149,7 +149,7 @@ wilcox.test(
 )
 
 ######################################################################
-##################Supplementary figure S5 ############################
+################# Supplementary figure S6 ############################
 ######################################################################
 
 ggplot(COMBO[COMBO$COUNT>10,], aes_string(x = "POS", y = log(COMBO[COMBO$COUNT>10,]$RPKM), ordered = FALSE)) + facet_grid(Species~CHR, scale="free") +theme_bw() + labs(title ="", x = "Genome Position (Mb)", y = "RPKM") + theme(axis.text.x = element_text(angle=0,vjust=0.5, hjust = 0.5, size=8), plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none")  + scale_x_continuous(labels = function(x) x/1000000) +theme(strip.background = element_rect(colour="white", fill="white"),panel.grid.major = element_blank(), panel.grid.minor = element_blank())  + theme(strip.text= element_text(size = 10))

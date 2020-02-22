@@ -1,5 +1,5 @@
 ################################################################
-###### Generates Figure 2, Figure S4, a Part of Table S4 #######
+###### Generates Figure 2, Figure S5, a Part of Table S4 #######
 ################################################################
 
 
@@ -147,7 +147,7 @@ ggsave("CE_CR_exon_intron_repeats_content_NOlegend.pdf",eir, width=7, height=3, 
 
 
 ############################################
-######### GC-content, Figure S4 A ##########
+######### GC-content, Figure S5 A ##########
 ############################################
 
 ggplot(GGC[GGC$CHR!="M" & GGC$Type=="GC-content",], aes_string(x = "POS", y = GGC[GGC$CHR!="M" & GGC$Type=="GC-content",]$Value*100, color= "Type", fill="Type", ordered = FALSE)) + facet_grid(Species~CHR, scale="free") +theme_bw() + labs(title ="", x = "Genome Position (Mb)", y = "GC-content (%)") + theme(axis.text.x = element_text(angle=0,vjust=0.5, hjust = 0.5), plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none") + scale_colour_manual(values = c(rep(c("#A49C74","grey40"),3),"#4daf4a","#e31a1c", "#ff7f00","#984ea3","#a65628")) + scale_fill_manual(values = c(rep(c("#A49C74","grey40"),3),"#377eb8","#4daf4a","#e31a1c", "#ff7f00","#984ea3","#a65628")) + scale_x_continuous(labels = function(x) x/1000000) +theme(strip.background = element_rect(colour="white", fill="white"),panel.grid.major = element_blank(), panel.grid.minor = element_blank())  + geom_point(size=0.75,alpha=0.75) + geom_smooth(color="grey30",linetype="solid",se=F,size=0.6) + theme(strip.text= element_text(size = 10))  + theme(strip.text= element_text(size = 10)) + geom_vline(data=CROMOSOME,aes(xintercept =Boundary), colour="grey50",size=0.5,linetype="dashed") ->gc
@@ -157,7 +157,7 @@ ggsave("CE_CR_GC_content.pdf",gc, width=7, height=3, units="in", scale=1.15)
 
 
 #################################################
-########## Gene fraction, Figure S4 B ###########
+########## Gene fraction, Figure S5 B ###########
 #################################################
 
 ggplot(GGC[GGC$CHR!="M" & GGC$Type=="Gene",], aes_string(x = "POS", y = GGC[GGC$CHR!="M" & GGC$Type=="Gene",]$Value*100, color= "Type", fill="Type", ordered = FALSE)) + facet_grid(Species~CHR, scale="free") +theme_bw() + labs(title ="", x = "Genome Position (Mb)", y = "Gene Fraction (%)") + theme(axis.text.x = element_text(angle=0,vjust=0.5, hjust = 0.5), plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none") + scale_colour_manual(values = c(rep(c("#FF7C01","grey40"),3),"#4daf4a","#e31a1c", "#ff7f00","#984ea3","#a65628")) + scale_fill_manual(values = c(rep(c("#FF7C01","grey40"),3),"#377eb8","#4daf4a","#e31a1c", "#ff7f00","#984ea3","#a65628")) + scale_x_continuous(labels = function(x) x/1000000) +theme(strip.background = element_rect(colour="white", fill="white"),panel.grid.major = element_blank(), panel.grid.minor = element_blank())  + geom_point(size=0.75,alpha=0.75) + geom_smooth(color="grey30",linetype="solid",se=F,size=0.6) + theme(strip.text= element_text(size = 10))  + theme(strip.text= element_text(size = 10)) + geom_vline(data=CROMOSOME,aes(xintercept =Boundary), colour="grey50",size=0.5,linetype="dashed") ->gf
@@ -167,7 +167,7 @@ ggsave("CE_CR_gene_fraction.pdf",gf, width=7, height=3, units="in", scale=1.15)
 
 
 ####################################################
-######### The number of genes, Figure S4 C##########
+######### The number of genes, Figure S5 C##########
 ####################################################
 
 

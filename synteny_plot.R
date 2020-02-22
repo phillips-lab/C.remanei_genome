@@ -1,5 +1,5 @@
 #####################################################################################
-###### Script that generates the linear synteny plot (Figure 1 in Teterina et al. 2019)
+###### Script that generates the linear synteny plot (Figure 1 in Teterina et al. 2020)
 ###### Input files: coordinates of 1-to-1 ortologs, chromosome sizes, and protein identities
 
 setwd("/Users/anastasia/Documents/Phillips_lab/drafts/CR_genome/Synteny")
